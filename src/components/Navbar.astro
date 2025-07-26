@@ -1,0 +1,240 @@
+---
+---
+
+<nav class="navbar">
+	<!-- Logo Section -->
+	<div class="navbar-logos">
+		<div class="container">
+			<div class="logos-wrapper">
+				<div class="logo">
+					<img src="/sye_logo.svg" alt="Logo 1" />
+				</div>
+				<div class="logo">
+					<img src="/adc_logo.png" alt="Logo 2" />
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Navigation Menu -->
+	<div class="navbar-menu">
+		<div class="container">
+			<div class="menu-wrapper">
+				<div class="brand">
+					<h2>Sonidos y Eventos Caracas</h2>
+				</div>
+				<ul class="nav-links">
+					<li><a href="/">Inicio</a></li>
+					<li><a href="/about">Nosotros</a></li>
+					<li><a href="/work-with-us">Trabaja con Nosotros</a></li>
+				</ul>
+				<div class="mobile-menu-toggle" id="mobile-menu-toggle">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				<ul class="nav-links-mobile" id="nav-links-mobile">
+					<li><a href="/">Inicio</a></li>
+					<li><a href="/about">Nosotros</a></li>
+					<li><a href="/work-with-us">Trabaja con Nosotros</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</nav>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+		const navLinksMobile = document.getElementById('nav-links-mobile');
+		
+		if (mobileMenuToggle && navLinksMobile) {
+			mobileMenuToggle.addEventListener('click', function() {
+				navLinksMobile.classList.toggle('active');
+				mobileMenuToggle.classList.toggle('active');
+			});
+
+			// Close menu when clicking on a link
+			const mobileLinks = navLinksMobile.querySelectorAll('a');
+			mobileLinks.forEach(link => {
+				link.addEventListener('click', function() {
+					navLinksMobile.classList.remove('active');
+					mobileMenuToggle.classList.remove('active');
+				});
+			});
+		}
+	});
+</script>
+
+<style>
+	.navbar {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 1000;
+		background-color: #fcfcfc;
+		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	}
+
+	.navbar-logos {
+		background-color: #f8f8f8;
+		padding: 5px 0;
+		border-bottom: 1px solid #e5e5e5;
+	}
+
+	.logos-wrapper {
+		display: flex;
+		justify-content: space-between;
+		gap: 40px;
+		align-items: center;
+	}
+
+	.logo img {
+		height: 40px;
+		width: auto;
+		object-fit: contain;
+		border-radius: 4px;
+	}
+
+	.navbar-menu {
+		padding: 15px 0;
+	}
+
+	.menu-wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.brand h2 {
+		color: #99311c;
+		font-size: 1.5rem;
+		font-weight: 700;
+	}
+
+	.nav-links {
+		display: flex;
+		list-style: none;
+		gap: 30px;
+		align-items: center;
+	}
+
+	.nav-links a {
+		text-decoration: none;
+		color: #4a4a4a;
+		font-weight: 500;
+		transition: color 0.3s ease;
+		position: relative;
+	}
+
+	.nav-links a:hover {
+		color: #99311c;
+	}
+
+	.nav-links a::after {
+		content: '';
+		position: absolute;
+		bottom: -5px;
+		left: 0;
+		width: 0;
+		height: 2px;
+		background-color: #99311c;
+		transition: width 0.3s ease;
+	}
+
+	.nav-links a:hover::after {
+		width: 100%;
+	}
+
+	.mobile-menu-toggle {
+		display: none;
+		flex-direction: column;
+		cursor: pointer;
+		gap: 4px;
+	}
+
+	.mobile-menu-toggle span {
+		width: 25px;
+		height: 3px;
+		background-color: #99311c;
+		transition: all 0.3s ease;
+	}
+
+	.mobile-menu-toggle.active span:nth-child(1) {
+		transform: rotate(45deg) translate(5px, 5px);
+	}
+
+	.mobile-menu-toggle.active span:nth-child(2) {
+		opacity: 0;
+	}
+
+	.mobile-menu-toggle.active span:nth-child(3) {
+		transform: rotate(-45deg) translate(7px, -6px);
+	}
+
+	.nav-links-mobile {
+		display: none;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		background-color: #fcfcfc;
+		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+		flex-direction: column;
+		padding: 20px;
+		gap: 15px;
+		list-style: none;
+		margin: 0;
+	}
+
+	.nav-links-mobile.active {
+		display: flex;
+	}
+
+	.nav-links-mobile a {
+		color: #4a4a4a;
+		text-decoration: none;
+		font-weight: 500;
+		padding: 10px 0;
+		border-bottom: 1px solid #e5e5e5;
+		transition: color 0.3s ease;
+	}
+
+	.nav-links-mobile a:hover {
+		color: #99311c;
+	}
+
+	@media (max-width: 768px) {
+		.logos-wrapper {
+			gap: 20px;
+		}
+
+		.logo img {
+			height: 30px;
+		}
+
+		.brand h2 {
+			font-size: 1.2rem;
+		}
+
+		.nav-links {
+			display: none;
+		}
+
+		.mobile-menu-toggle {
+			display: flex;
+		}
+	}
+
+	/* Add space for fixed navbar */
+	:global(body) {
+		padding-top: 120px;
+	}
+
+	@media (max-width: 768px) {
+		:global(body) {
+			padding-top: 100px;
+		}
+	}
+</style>

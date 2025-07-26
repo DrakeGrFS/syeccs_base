@@ -1,0 +1,112 @@
+---
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon1.svg" />
+		<link rel="icon" type="image/png" href="/favicon.png" />
+	
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	html {
+		font-family: 'Inter', system-ui, sans-serif;
+		scroll-behavior: smooth;
+	}
+
+	body {
+		background-color: #fcfcfc;
+		color: #2a2a2a;
+		line-height: 1.6;
+		position: relative;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		color: #99311c;
+		font-weight: 600;
+	}
+
+	p {
+		color: #4a4a4a;
+	}
+
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 20px;
+	}
+
+	.btn {
+		display: inline-block;
+		padding: 12px 24px;
+		background-color: #99311c;
+		color: white;
+		text-decoration: none;
+		border-radius: 8px;
+		font-weight: 500;
+		transition: all 0.3s ease;
+		border: none;
+		cursor: pointer;
+	}
+
+	.btn:hover {
+		background-color: #5a1609;
+		transform: translateY(-2px);
+	}
+
+	.btn-outline {
+		background-color: transparent;
+		color: #99311c;
+		border: 2px solid #99311c;
+	}
+
+	.btn-outline:hover {
+		background-color: #99311c;
+		color: white;
+	}
+
+	.section {
+		padding: 80px 0;
+	}
+
+	.section-title {
+		font-size: 2.5rem;
+		text-align: center;
+		margin-bottom: 60px;
+		color: #99311c;
+	}
+
+	@media (max-width: 768px) {
+		.section {
+			padding: 60px 0;
+		}
+		
+		.section-title {
+			font-size: 2rem;
+			margin-bottom: 40px;
+		}
+	}
+</style>

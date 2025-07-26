@@ -1,0 +1,222 @@
+---
+---
+
+<section id="home" class="hero">
+	<div class="hero-slider">
+		<div class="slide active">
+			<img src="/slider1.webp" alt="Evento 1" />
+			<div class="slide-content">
+				<h1>Eventos Inolvidables en Caracas</h1>
+			</div>
+		</div>
+		<div class="slide">
+			<img src="/slider2.webp" alt="Evento 2" />
+			<div class="slide-content">
+				<h1>Sonido Profesional de Calidad</h1>
+			</div>
+		</div>
+		<div class="slide">
+			<img src="/slider3.jpg" alt="Evento 3" />
+			<div class="slide-content">
+				<h1>Experiencia y Profesionalismo</h1>
+			</div>
+		</div>
+	</div>
+	
+	<div class="slider-controls">
+		<button class="prev" onclick="changeSlide(-1)">‹</button>
+		<div class="dots">
+			<span class="dot active" onclick="currentSlide(1)"></span>
+			<span class="dot" onclick="currentSlide(2)"></span>
+			<span class="dot" onclick="currentSlide(3)"></span>
+		</div>
+		<button class="next" onclick="changeSlide(1)">›</button>
+	</div>
+</section>
+
+<script>
+	let slideIndex = 1;
+	let slideInterval;
+
+	function showSlide(n) {
+		const slides = document.querySelectorAll('.slide');
+		const dots = document.querySelectorAll('.dot');
+		
+		if (n > slides.length) { slideIndex = 1; }
+		if (n < 1) { slideIndex = slides.length; }
+		
+		slides.forEach(slide => slide.classList.remove('active'));
+		dots.forEach(dot => dot.classList.remove('active'));
+		
+		slides[slideIndex - 1].classList.add('active');
+		dots[slideIndex - 1].classList.add('active');
+	}
+
+	function changeSlide(n) {
+		slideIndex += n;
+		showSlide(slideIndex);
+		resetInterval();
+	}
+
+	function currentSlide(n) {
+		slideIndex = n;
+		showSlide(slideIndex);
+		resetInterval();
+	}
+
+	function autoSlide() {
+		slideIndex++;
+		showSlide(slideIndex);
+	}
+
+	function resetInterval() {
+		clearInterval(slideInterval);
+		slideInterval = setInterval(autoSlide, 5000);
+	}
+
+	// Make functions global
+	window.changeSlide = changeSlide;
+	window.currentSlide = currentSlide;
+
+	// Start auto-slide
+	slideInterval = setInterval(autoSlide, 5000);
+</script>
+
+<style>
+	.hero {
+		position: relative;
+		height: 70vh;
+		min-height: 500px;
+		overflow: hidden;
+	}
+
+	.hero-slider {
+		position: relative;
+		width: 100%;
+		height: 100%;
+	}
+
+	.slide {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		transition: opacity 1s ease-in-out;
+	}
+
+	.slide.active {
+		opacity: 1;
+	}
+
+	.slide img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.slide-content {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+		color: white;
+		z-index: 2;
+		max-width: 600px;
+		padding: 0 20px;
+	}
+
+	.slide-content::before {
+		content: '';
+		position: absolute;
+		top: -20px;
+		left: -20px;
+		right: -20px;
+		bottom: -20px;
+		background: rgba(0, 0, 0, 0.3);
+		border-radius: 10px;
+		z-index: -1;
+	}
+
+	.slide-content h1 {
+		font-size: 3rem;
+		margin-bottom: 20px;
+		color: white;
+	}
+
+	.slide-content p {
+		font-size: 1.2rem;
+		margin-bottom: 30px;
+		color: #f0f0f0;
+	}
+
+	.slider-controls {
+		position: absolute;
+		bottom: 30px;
+		left: 50%;
+		transform: translateX(-50%);
+		display: flex;
+		align-items: center;
+		gap: 20px;
+		z-index: 3;
+	}
+
+	.prev, .next {
+		background: rgba(122, 30, 12, 0.8);
+		color: white;
+		border: none;
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		font-size: 24px;
+		cursor: pointer;
+		transition: all 0.3s ease;
+	}
+
+	.prev:hover, .next:hover {
+		background: rgba(122, 30, 12, 1);
+		transform: scale(1.1);
+	}
+
+	.dots {
+		display: flex;
+		gap: 10px;
+	}
+
+	.dot {
+		width: 15px;
+		height: 15px;
+		border-radius: 50%;
+		background: rgba(255, 255, 255, 0.5);
+		cursor: pointer;
+		transition: all 0.3s ease;
+	}
+
+	.dot.active {
+		background: #99311c;
+		transform: scale(1.2);
+	}
+
+	@media (max-width: 768px) {
+		.hero {
+			height: 60vh;
+			min-height: 400px;
+		}
+
+		.slide-content h1 {
+			font-size: 2rem;
+		}
+
+		.slide-content p {
+			font-size: 1rem;
+		}
+
+		.prev, .next {
+			width: 40px;
+			height: 40px;
+			font-size: 20px;
+		}
+	}
+</style>

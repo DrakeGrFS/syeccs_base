@@ -1,0 +1,182 @@
+---
+---
+
+<section id="services" class="section services">
+	<div class="container">
+		<h2 class="section-title">Nuestros Servicios</h2>
+		
+		<div class="services-grid">
+			<div class="service-card">
+				<div class="service-icon">
+					<svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#9c2c16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M2 17L12 22L22 17" stroke="#9c2c16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M2 12L12 17L22 12" stroke="#9c2c16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+				</div>
+				<h3>Producción de Eventos</h3>
+				<p>Nos encargamos de cada detalle para asegurar que tu visión se materialice sin contratiempos, desde la concepción inicial hasta el último aplauso.</p>
+				<ul class="service-features">
+					<li>Planificación completa del evento</li>
+					<li>Coordinación de proveedores</li>
+					<li>Gestión de tiempos y cronogramas</li>
+					<li>Supervisión en sitio</li>
+				</ul>
+				<a href="#contact" class="btn btn-outline">Más Información</a>
+			</div>
+
+			<div class="service-card featured">
+				<div class="service-icon">
+					<svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M9 18V5L16 12L9 18Z" stroke="#9c2c16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M16 5V19" stroke="#9c2c16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M5 5V19" stroke="#9c2c16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+				</div>
+				<h3>Alquiler de Equipos</h3>
+				<p>Contamos con un inventario robusto y tecnológicamente avanzado, listo para satisfacer las demandas de cualquier tipo de producción, desde una pequeña reunión hasta un gran concierto en Caracas.</p>
+				<ul class="service-features">
+					<li>Sistemas de sonido profesional</li>
+					<li>Iluminación LED y efectos</li>
+					<li>Equipos audiovisuales</li>
+					<li>Tarimas y estructuras</li>
+				</ul>
+				<a href="#contact" class="btn">Solicitar Cotización</a>
+			</div>
+
+			<div class="service-card">
+				<div class="service-icon">
+					<svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="#9c2c16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						<circle cx="9" cy="7" r="4" stroke="#9c2c16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M23 21V19C23 18.1645 22.7155 17.3541 22.2094 16.7018C21.7033 16.0494 20.9999 15.5901 20.2 15.4" stroke="#9c2c16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M16 3.13C16.8003 3.35 17.5037 3.80929 18.0098 4.46163C18.5159 5.11396 18.8004 5.92436 18.8004 6.76C18.8004 7.59564 18.5159 8.40604 18.0098 9.05837C17.5037 9.71071 16.8003 10.17 16 10.39" stroke="#9c2c16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+				</div>
+				<h3>Gestión de Marketing</h3>
+				<p>Nuestra Gestión de Marketing está diseñada para asegurar que tu evento alcance a la audiencia correcta, genere el entusiasmo necesario y deje una impresión duradera, mucho antes y después de que las luces se enciendan.</p>
+				<ul class="service-features">
+					<li>Estrategia de Comunicación y Promoción</li>
+					<li>Diseño Gráfico y de Contenido</li>
+					<li>Gestión de Redes Sociales</li>
+					<li>Relaciones Públicas y Medios</li>
+				</ul>
+				<a href="#contact" class="btn btn-outline">Consultar Disponibilidad</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.services {
+		background-color: #f8f8f8;
+	}
+
+	.services-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 40px;
+		max-width: 1000px;
+		margin: 0 auto;
+	}
+
+	.service-card {
+		background: white;
+		padding: 40px 30px;
+		border-radius: 16px;
+		text-align: center;
+		box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+		transition: all 0.3s ease;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.service-card::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 4px;
+		background: linear-gradient(90deg, #99311c, #a0251a);
+		transform: scaleX(0);
+		transition: transform 0.3s ease;
+	}
+
+	.service-card:hover {
+		transform: translateY(-10px);
+		box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+	}
+
+	.service-card:hover::before {
+		transform: scaleX(1);
+	}
+
+	.service-card.featured {
+		transform: scale(1.05);
+		border: 2px solid #99311c;
+	}
+
+	.service-card.featured::before {
+		transform: scaleX(1);
+		height: 6px;
+	}
+
+	.service-icon {
+		margin-bottom: 25px;
+		display: flex;
+		justify-content: center;
+	}
+
+	.service-card h3 {
+		font-size: 1.8rem;
+		margin-bottom: 20px;
+		color: #99311c;
+	}
+
+	.service-card p {
+		margin-bottom: 25px;
+		line-height: 1.6;
+		color: #4a4a4a;
+	}
+
+	.service-features {
+		list-style: none;
+		margin-bottom: 30px;
+		text-align: left;
+	}
+
+	.service-features li {
+		padding: 8px 0;
+		color: #4a4a4a;
+		position: relative;
+		padding-left: 25px;
+	}
+
+	.service-features li::before {
+		content: '✓';
+		position: absolute;
+		left: 0;
+		color: #99311c;
+		font-weight: bold;
+	}
+
+	@media (max-width: 768px) {
+		.services-grid {
+			grid-template-columns: 1fr;
+			gap: 30px;
+		}
+
+		.service-card {
+			padding: 30px 20px;
+		}
+
+		.service-card.featured {
+			transform: none;
+		}
+
+		.service-card h3 {
+			font-size: 1.5rem;
+		}
+	}
+</style>

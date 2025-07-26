@@ -1,0 +1,402 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import SocialSidebar from "../components/SocialSidebar.astro";
+---
+
+<Layout title="Nosotros - Sonidos y Eventos Caracas">
+  <Navbar />
+  <SocialSidebar />
+
+  <!-- Hero Section with Slogan -->
+  <section class="hero-about">
+    <div class="hero-background">
+      <img src="/public/imagen1.jpg" alt="Background" />
+    </div>
+    <div class="hero-content">
+      <h1>"Hacemos realidad tus eventos soñados"</h1>
+      <p>Experiencia, profesionalismo y pasión en cada detalle</p>
+    </div>
+  </section>
+
+  <!-- Company Description -->
+  <section class="section company-description">
+    <div class="container">
+      <div class="description-content">
+        <h2>Nuestra Historia</h2>
+        <p>
+          En Sonidos y Eventos Caracas, nos dedicamos apasionadamente a
+          transformar tus ideas en realidades vibrantes y memorables. No somos
+          solo organizadores; somos creadores de atmósferas únicas, expertos en
+          diseñar experiencias que resuenan mucho después de que el evento ha
+          terminado. Nuestro compromiso es superar tus expectativas, sin
+          importar la magnitud o la naturaleza de tu celebración.
+        </p>
+        <p>
+          Entendemos que cada cliente es único, y por eso, nos enorgullecemos de
+          ofrecer un servicio completamente personalizado. Desde la
+          conceptualización inicial hasta la ejecución final, trabajamos de la
+          mano contigo para capturar la esencia de tu estilo y personalidad.
+          Contamos con una vasta red de recursos y tecnología de vanguardia en
+          sonido, iluminación y producción, lo que nos permite diseñar y
+          organizar eventos a medida que no solo cumplen, sino que exceden tus
+          sueños.
+        </p>
+        <p>
+          Permítenos ser tu aliado estratégico en la creación de momentos
+          extraordinarios. En Sonidos y Eventos Caracas, tu próximo evento no
+          será solo especial, será una obra maestra de la que todos hablarán.
+          ¡Estamos listos para hacer de tu visión una experiencia verdaderamente
+          inolvidable!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission and Vision -->
+  <section class="section mission-vision">
+    <div class="container">
+      <div class="mission-vision-grid">
+        <div class="mission-box">
+          <div class="box-icon">
+            <svg
+              width="60"
+              height="60"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 2L2 7L12 12L22 7L12 2Z"
+                stroke="#9c2c16"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M2 17L12 22L22 17"
+                stroke="#9c2c16"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M2 12L12 17L22 12"
+                stroke="#9c2c16"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <h3>Nuestra Misión</h3>
+          <p>
+            Brindar servicios asociados al desarrollo de eventos de distintas
+            índoles en el territorio nacional e internacional, combinando
+            creatividad, innovación y eficiencia en cada proyecto.
+          </p>
+        </div>
+
+        <div class="vision-box">
+          <div class="box-icon">
+            <svg
+              width="60"
+              height="60"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1 12S5 4 12 4S23 12 23 12S19 20 12 20S1 12 1 12Z"
+                stroke="#9c2c16"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <circle
+                cx="12"
+                cy="12"
+                r="3"
+                stroke="#9c2c16"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></circle>
+            </svg>
+          </div>
+          <h3>Nuestra Visión</h3>
+          <p>
+            Ser la empresa líder en la organización de eventos en Caracas,
+            reconocida por nuestra excelencia en la planificación y ejecución de
+            eventos de todo tipo. Aspiramos a ser la primera opción para
+            nuestros clientes, ofreciendo soluciones innovadoras y
+            personalizadas que se adapten a sus necesidades específicas
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section company-description">
+    <div class="container">
+      <div class="description-content">
+        <h2>Nuestro Equipo Directivo</h2>
+
+        <div class="cards-container">
+			<div class="profile-card">
+          <div class="profile-image-container">
+            <img src="/public/aberroteran.webp" alt="Foto de Perfil" />
+          </div>
+          <h4 class="profile-name">Alexander Beroterán</h4>
+          <span class="profile-title">Presidente</span>
+        </div>
+
+		<div class="profile-card">
+          <div class="profile-image-container">
+            <img src="/public/daniGil.jpg" alt="Foto de Perfil" />
+          </div>
+          <h4 class="profile-name">Daniela Gil</h4>
+          <span class="profile-title">Directora General</span>
+        </div>
+		</div>
+
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+
+   .cards-container {
+	
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	gap: 20px;
+	margin-top: 40px;
+   }
+   @media screen { max-width: 768px;
+	 .cards-container {
+		flex-direction: column;
+		align-items: center;
+	 }
+   }
+
+  .hero-about {
+    position: relative;
+    height: 70vh;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .hero-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(8px) brightness(0.4);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    max-width: 800px;
+    padding: 0 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    font-weight: 700;
+  }
+
+  .hero-content p {
+    font-size: 1.5rem;
+    color: #f0f0f0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    font-weight: 300;
+  }
+
+  .company-description {
+    background-color: #fcfcfc;
+  }
+
+  .description-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .description-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #99311c;
+  }
+
+  .description-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    color: #4a4a4a;
+  }
+
+  .mission-vision {
+    background-color: #f8f8f8;
+  }
+
+  .mission-vision-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .mission-box,
+  .vision-box {
+    background: white;
+    padding: 50px 40px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .mission-box::before,
+  .vision-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #99311c, #a0251a);
+  }
+
+  .mission-box:hover,
+  .vision-box:hover {
+    transform: translateY(-10px);
+  }
+
+  .box-icon {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .mission-box h3,
+  .vision-box h3 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: #99311c;
+  }
+
+  .mission-box p,
+  .vision-box p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #4a4a4a;
+  }
+
+
+  .profile-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            width: 200px; /* Ancho fijo para la tarjeta */
+            font-family: Arial, sans-serif;
+            margin: 20px; /* Espacio alrededor de la tarjeta */
+        }
+
+        .profile-image-container {
+            width: 220px; /* Diámetro del círculo */
+            height: 220px; /* Diámetro del círculo */
+            border-radius: 50%; /* Hace la imagen circular */
+            overflow: hidden; /* Oculta el exceso de la imagen */
+            margin-bottom: 15px;
+            border: 3px solid #99311c; /* Borde alrededor de la imagen */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-image-container img {
+            width: 100%; /* Asegura que la imagen llene el contenedor */
+            height: 100%;
+            object-fit: cover; /* Recorta la imagen para que encaje sin distorsionar */
+        }
+
+        .profile-name {
+            margin: 0;
+            color: #333;
+            font-size: 1.3em;
+            margin-bottom: 5px;
+        }
+
+        .profile-title {
+            color: #666;
+            font-size: 0.9em;
+            margin: 0;
+        }
+
+  @media (max-width: 768px) {
+    .hero-about {
+      height: 60vh;
+      min-height: 400px;
+    }
+
+    .hero-content h1 {
+      font-size: 2.5rem;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+    }
+
+    .description-content h2 {
+      font-size: 2rem;
+    }
+
+    .description-content p {
+      font-size: 1rem;
+    }
+
+    .mission-vision-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .mission-box,
+    .vision-box {
+      padding: 40px 30px;
+    }
+
+    .mission-box h3,
+    .vision-box h3 {
+      font-size: 1.5rem;
+    }
+
+    .mission-box p,
+    .vision-box p {
+      font-size: 1rem;
+    }
+  }
+</style>

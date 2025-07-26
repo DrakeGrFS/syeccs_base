@@ -1,0 +1,294 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import SocialSidebar from '../components/SocialSidebar.astro';
+---
+
+<Layout title="Trabaja con Nosotros - Sonidos y Eventos Caracas">
+	<Navbar />
+	<SocialSidebar />
+	
+	<section class="work-form-section">
+		<div class="container">
+			<div class="form-container">
+				<div class="form-header">
+					<h1>Trabaja con Nosotros</h1>
+					<p>Completa el formulario y nos pondremos en contacto contigo</p>
+				</div>
+				
+				<form class="contact-form" id="contactForm">
+					<div class="form-group">
+						<label for="firstName">Nombre *</label>
+						<input type="text" id="firstName" name="firstName" required>
+					</div>
+					
+					<div class="form-group">
+						<label for="lastName">Apellido *</label>
+						<input type="text" id="lastName" name="lastName" required>
+					</div>
+					
+					<div class="form-group">
+						<label for="company">Nombre de la Empresa</label>
+						<input type="text" id="company" name="company" placeholder="Opcional">
+					</div>
+					
+					<div class="form-group">
+						<label for="email">Correo Electrónico *</label>
+						<input type="email" id="email" name="email" required>
+					</div>
+					
+					<button type="submit" class="btn submit-btn">Enviar Solicitud</button>
+				</form>
+			</div>
+		</div>
+	</section>
+
+	<Footer />
+</Layout>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		const form = document.getElementById('contactForm');
+		
+		if (form) {
+			form.addEventListener('submit', function(e) {
+				e.preventDefault();
+				
+				// Get form data
+				const formData = new FormData(form);
+				const data = Object.fromEntries(formData);
+				
+				// Simple validation
+				if (!data.firstName || !data.lastName || !data.email) {
+					alert('Por favor completa todos los campos obligatorios.');
+					return;
+				}
+				
+				// Simulate form submission
+				alert('¡Gracias por tu interés! Nos pondremos en contacto contigo pronto.');
+				form.reset();
+			});
+		}
+	});
+</script>
+
+<style>
+	.work-form-section {
+    padding: 100px 20px; /* Añade un padding horizontal para evitar que el formulario toque los bordes */
+    background: linear-gradient(135deg, #fcfcfc 0%, #f8f8f8 100%);
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra el contenido vertical y horizontalmente */
+}
+
+.form-container {
+    width: 100%; /* El contenedor ahora ocupa el 100% del ancho disponible en su punto de quiebre */
+    max-width: 600px; /* Mantiene un ancho máximo para pantallas grandes */
+    margin: 0 auto;
+    background: white;
+    padding: 60px 50px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box; /* Asegura que padding y border se incluyan en el ancho/alto */
+}
+
+.form-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #99311c, #a0251a);
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.form-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #99311c;
+}
+
+.form-header p {
+    color: #4a4a4a;
+    font-size: 1.1rem;
+    line-height: 1.6; /* Mejora la legibilidad */
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    color: #99311c;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.form-group input,
+.form-group textarea { /* Añadir textarea si planeas usarlo */
+    padding: 15px;
+    border: 2px solid #e5e5e5;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #fcfcfc;
+    width: 100%; /* Asegura que ocupen todo el ancho disponible */
+    box-sizing: border-box; /* Crucial para que padding y border no aumenten el ancho */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #99311c;
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(122, 30, 12, 0.1);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+.submit-btn {
+    margin-top: 20px;
+    padding: 18px 24px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, #99311c 0%, #a0251a 100%);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    width: 100%; /* Hace que el botón ocupe todo el ancho */
+    box-sizing: border-box;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(122, 30, 12, 0.3);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+/* --- Ajustes Responsivos --- */
+
+@media (max-width: 768px) {
+    .work-form-section {
+        padding: 60px 0; /* Reduce el padding vertical */
+    }
+
+    .form-container {
+        margin: 0 20px; /* Añade margen a los lados para que no esté pegado a los bordes */
+        padding: 40px 30px; /* Reduce el padding interno del formulario */
+    }
+
+    .form-header h1 {
+        font-size: 2rem;
+    }
+
+    .form-header p {
+        font-size: 1rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 12px; /* Reduce el padding de los inputs */
+        font-size: 0.95rem; /* Ligeramente más pequeña la fuente de los inputs */
+    }
+
+    .submit-btn {
+        padding: 15px 20px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) { /* Nuevo punto de quiebre para móviles más pequeños */
+    .work-form-section {
+        padding: 40px 0; /* Más reducción de padding vertical */
+    }
+
+    .form-container {
+        margin: 0 15px; /* Margen más ajustado para pantallas muy pequeñas */
+        padding: 30px 20px; /* Relleno más pequeño dentro del formulario */
+    }
+
+    .form-header {
+        margin-bottom: 30px; /* Ajusta el margen inferior del encabezado */
+    }
+
+    .form-header h1 {
+        font-size: 1.8rem; /* Tamaño de fuente más pequeño para el título principal */
+    }
+
+    .form-header p {
+        font-size: 0.9rem; /* Tamaño de fuente más pequeño para el subtítulo */
+    }
+
+    .contact-form {
+        gap: 20px; /* Reduce el espacio entre los grupos de formulario */
+    }
+
+    .form-group label {
+        font-size: 0.9rem; /* Tamaño de fuente más pequeño para las etiquetas */
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 10px; /* Más reducción de padding en los inputs */
+        font-size: 0.9rem; /* Tamaño de fuente aún más pequeño para los inputs */
+    }
+
+    .submit-btn {
+        padding: 12px 18px; /* Relleno más pequeño para el botón */
+        font-size: 0.95rem; /* Tamaño de fuente más pequeño para el botón */
+    }
+}
+
+@media (max-width: 320px) { /* Para los dispositivos más pequeños, como algunos teléfonos antiguos */
+    .form-container {
+        padding: 25px 15px; /* Relleno mínimo para que el contenido no se pegue demasiado */
+    }
+
+    .form-header h1 {
+        font-size: 1.5rem; /* Tamaño de fuente aún más pequeño para el título */
+    }
+
+    .form-header p {
+        font-size: 0.85rem; /* Tamaño de fuente más pequeño para el subtítulo */
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 8px; /* Relleno mínimo en los inputs */
+        font-size: 0.85rem; /* Asegura que el texto quepa */
+    }
+
+    .submit-btn {
+        padding: 10px 15px; /* Relleno mínimo para el botón */
+        font-size: 0.85rem; /* Asegura que el texto del botón quepa */
+    }
+}
+</style>

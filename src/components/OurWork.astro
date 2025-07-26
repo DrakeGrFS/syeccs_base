@@ -1,0 +1,128 @@
+---
+---
+
+<section id="work" class="section our-work">
+	<div class="container">
+		<h2 class="section-title">Nuestro Trabajo</h2>
+		
+		<div class="work-item">
+			<div class="work-content">
+				<h3>Eventos Corporativos</h3>
+				<p>Nuestro equipo se especializa en transformar tus objetivos corporativos en experiencias impactantes y profesionales que reflejan la excelencia de tu organización.</p>
+				<p>Nos encargamos de cada detalle para que tu evento sea un éxito rotundo, desde la planificación estratégica hasta la ejecución impecable.</p>
+			</div>
+			<div class="work-image">
+				<img src="/public/imagen3.jpg" alt="Eventos Corporativos" />
+			</div>
+		</div>
+
+		<div class="work-item reverse">
+			<div class="work-content">
+				<h3>Campañas Electorales</h3>
+				<p>No solo producimos eventos; creamos plataformas impactantes para que tu mensaje resuene con fuerza y claridad entre el electorado.</p>
+				<p>Desde grandes mítines y caravanas multitudinarias hasta encuentros comunitarios íntimos y foros de debate, nos encargamos de cada detalle logístico y técnico.</p>
+			</div>
+			<div class="work-image">
+				<img src="/public/imagen2.jpg" alt="Campañas electorales" />
+			</div>
+		</div>
+
+		<div class="work-item">
+			<div class="work-content">
+				<h3>Conciertos y Festivales</h3>
+				<p>Entendemos la complejidad y la magnitud que implica producir eventos de esta envergadura, y por eso, nos dedicamos a transformar tus ideas musicales en experiencias sonoras y visuales inolvidables para miles de personas.</p>
+				<p>Desde la planificación logística más minuciosa hasta la puesta en escena más espectacular, nuestro equipo experto se encarga de cada detalle para garantizar que cada nota y cada luz contribuyan a un show impecable y emocionante, que resuene en la memoria de los asistentes mucho después de que termine la última canción.</p>
+				<a href="#contact" class="btn">Solicitar Cotización</a>
+			</div>
+			<div class="work-image">
+				<img src="/public/imagen1.jpg" alt="Conciertos y Festivales" />
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.our-work {
+		background-color: #fcfcfc;
+	}
+
+	.work-item {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 60px;
+		align-items: center;
+		margin-bottom: 80px;
+	}
+
+	.work-item:last-child {
+		margin-bottom: 0;
+	}
+
+	.work-item.reverse {
+		direction: rtl;
+	}
+
+	.work-item.reverse > * {
+		direction: ltr;
+	}
+
+	.work-content h3 {
+		font-size: 2rem;
+		margin-bottom: 20px;
+		color: #99311c;
+	}
+
+	.work-content p {
+		margin-bottom: 20px;
+		font-size: 1.1rem;
+		line-height: 1.7;
+		color: #4a4a4a;
+	}
+
+	.work-image {
+		position: relative;
+		overflow: hidden;
+		border-radius: 12px;
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+		transition: transform 0.3s ease;
+	}
+
+	.work-image:hover {
+		transform: translateY(-5px);
+	}
+
+	.work-image img {
+		width: 100%;
+		height: 400px;
+		object-fit: cover;
+		transition: transform 0.3s ease;
+	}
+
+	.work-image:hover img {
+		transform: scale(1.05);
+	}
+
+	@media (max-width: 768px) {
+		.work-item {
+			grid-template-columns: 1fr;
+			gap: 30px;
+			margin-bottom: 60px;
+		}
+
+		.work-item.reverse {
+			direction: ltr;
+		}
+
+		.work-content h3 {
+			font-size: 1.5rem;
+		}
+
+		.work-content p {
+			font-size: 1rem;
+		}
+
+		.work-image img {
+			height: 250px;
+		}
+	}
+</style>
